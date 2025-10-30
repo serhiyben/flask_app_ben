@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="text-center mb-4">
+    <h1>Бень Сергій</h1>
+    <p class="lead">Python / Flask Developer</p>
+    <img src="{{ url_for('static', filename='images/image1.jpg') }}" 
+     alt="Фото" 
+     class="rounded-circle my-3" 
+     width="150">
+
+</section>
+
+<section>
+    <h2>Про себе</h2>
+    <p>Я студент,очатківець веб-розробник, який захоплюється створенням сучасних веб-застосунків.</p>
+</section>
+
+<section>
+    <h2>Освіта</h2>
+    <ul>
+        <li>Прикарпатський національний університет, Інженерія програмного забезпечення</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Навички</h2>
+    <ul>
+        <li>Python, Flask</li>
+        <li>HTML, CSS, Bootstrap</li>
+        <li>java script</li>
+        <li>Git, GitHub</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Технології</h2>
+    <p>Flask, Jinja2, Bootstrap, SQLAlchemy, java script, Angular</p>
+</section>
+
+<section>
+    <h2>Проекти</h2>
+    <p>Веб-застосунок для візуалізації даних, створений у рамках навчання.</p>
+    <p>Веб-застосунок для оренди авто створений під час навчання</p>
+</section>
+{% endblock %}
