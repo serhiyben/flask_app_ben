@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Список продуктів</h2>
+<ul class="list-group">
+    {% for p in products %}
+    <li class="list-group-item">{{ p }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
