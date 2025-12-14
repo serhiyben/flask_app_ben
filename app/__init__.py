@@ -34,7 +34,8 @@ def create_app(config_name='default'):
 
     # Тут пізніше буде реєстрація блюпринта для постів (Lab 6, Частина 2)
     # from app.posts.views import posts_bp
-    # app.register_blueprint(posts_bp, url_prefix="/posts")
+    from app.posts import posts_bp
+    app.register_blueprint(posts_bp, url_prefix="/post")
 
     # --- Обробник помилок ---
     @app.errorhandler(404)
