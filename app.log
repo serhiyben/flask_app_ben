@@ -62,3 +62,6 @@
 2025-12-14 20:48:57,964 - INFO -  * Detected change in 'C:\\Users\\aaa\\Desktop\\pnu\\course3\\webPy\\flask_app_ben\\app\\users\\views.py', reloading
 2025-12-14 20:48:58,419 - WARNING -  * Debugger is active!
 2025-12-14 20:48:58,424 - INFO -  * Debugger PIN: 416-277-888
+2025-12-14 20:49:05,906 - INFO - 127.0.0.1 - - [14/Dec/2025 20:49:05] "[32mPOST /users/login HTTP/1.1[0m" 302 -
+2025-12-14 20:49:05,937 - INFO - 127.0.0.1 - - [14/Dec/2025 20:49:05] "GET /users/profile HTTP/1.1" 200 -
+2025-12-14 20:49:06,042 - INFO - 127.0.0.1 - - [14/Dec/2025 20:49:06] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
