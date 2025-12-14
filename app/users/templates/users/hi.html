@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-3">
+        <ul class="list-group">
+            <li class="list-group-item"><a href="{{ url_for('users.greetings', name='JOHN', age=25) }}">Привітання</a></li>
+            <li class="list-group-item"><a href="{{ url_for('users.admin') }}">Адмін</a></li>
+        </ul>
+    </div>
+    <div class="col-9">
+        <h2>Привіт, {{ name }}!</h2>
+        <p>Ваш вік: {{ age }}</p>
+    </div>
+</div>
+{% endblock %}
