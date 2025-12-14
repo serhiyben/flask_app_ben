@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% set current_theme = request.cookies.get('theme', 'light') %}
+
+{% if current_theme == 'dark' %}
+    {% set bg_class = 'bg-dark text-white' %}
+    {% set card_class = 'bg-secondary text-white' %}
+    {% set table_class = 'table-dark' %}
+{% elif current_theme == 'green' %}
+    {% set bg_class = 'bg-success text-white' %}
+    {% set card_class = 'bg-success text-white border-light' %}
+    {% set table_class = 'table-success' %}
+{% else %}
+    {% set bg_class = 'bg-light text-dark' %}
+    {% set card_class = 'bg-white text-dark' %}
+    {% set table_class = 'table-light' %}
+{% endif %}
+
+<div class="container pb-5">
+    
+    <div class="alert shadow-sm mt-3 {{ bg_class }} border">
+        <h1 class="display-4">Ласкаво просимо, {{ username }}!</h1>
+        <p class="lead">Поточна тема: <strong>{{ current_theme }}</strong></p>
+        <hr class="my-4 border-light">
+        
+        <div class="d-flex gap-2 mb-3">
+            <a class="btn btn-danger" href="{{ url_for('users.logout') }}" role="button">Вийти</a>
+            <a class="btn btn-secondary" href="{{ url_for('pages.index') }}" role="button">На головну</a>
+        </div>
+
+        <div>
+            <h5>Виберіть тему:</h5>
+            <div class="btn-group" role="group">
+                <a href="{{ url_for('users.change_theme', theme='light') }}" class="btn btn-light border">Світла</a>
+                <a href="{{ url_for('users.change_theme', theme='dark') }}" class="btn btn-dark border">Темна</a>
+                <a href="{{ url_for('users.change_theme', theme='green') }}" class="btn btn-success border">Зелена</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h3>Додати куку</h3>
+            <div class="card p-3 shadow-sm mb-3 {{ card_class }}">
+                <form action="{{ url_for('users.add_cookie') }}" method="POST">
+                    <div class="mb-3">
+                        <label for="key" class="form-label">Ключ</label>
+                        <input type="text" class="form-control" id="key" name="key" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="value" class="form-label">Значення</label>
+                        <input type="text" class="form-control" id="value" name="value" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="expiry" class="form-label">Термін дії (сек)</label>
+                        <input type="number" class="form-control" id="expiry" name="expiry" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Додати</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <h3>Видалити куку</h3>
+            <div class="card p-3 shadow-sm mb-3 {{ card_class }}">
+                <form action="{{ url_for('users.delete_cookie') }}" method="POST">
+                    <div class="mb-3">
+                        <label for="del_key" class="form-label">Ключ для видалення</label>
+                        <input type="text" class="form-control" id="del_key" name="key" required>
+                    </div>
+                    <button type="submit" class="btn btn-warning">Видалити</button>
+                </form>
+            </div>
+
+            <div class="card p-3 shadow-sm {{ card_class }}">
+                <h3>Очистити все</h3>
+                <form action="{{ url_for('users.delete_all_cookies') }}" method="POST">
+                    <button type="submit" class="btn btn-danger">Видалити всі куки</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4 mb-5">
+        <div class="col-12">
+            <h3>Список всіх куків</h3>
+            <table class="table table-bordered {{ table_class }}">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Ключ</th>
+                        <th>Значення</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for key, value in cookies.items() %}
+                    <tr>
+                        <td>{{ key }}</td>
+                        <td>{{ value }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

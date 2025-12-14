@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="p-5 mb-4 bg-light rounded-3 shadow-sm text-center">
+    <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Портфоліо Бень Сергія</h1>
+        <p class="col-md-8 fs-4 mx-auto">Вітаю на моєму сайті! Тут ви можете переглянути моє резюме, зв'язатися зі мною або увійти в систему.</p>
+        
+        <div class="d-flex justify-content-center gap-3 mt-4">
+            <a href="{{ url_for('pages.resume') }}" class="btn btn-primary btn-lg">Переглянути Резюме</a>
+            
+            <a href="{{ url_for('pages.contacts') }}" class="btn btn-outline-secondary btn-lg">Контакти</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
