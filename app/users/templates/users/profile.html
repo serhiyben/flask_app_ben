@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="alert alert-info shadow-sm">
+    <h1 class="display-4">Ласкаво просимо, {{ username }}!</h1>
+    <p class="lead">Тут ви можете отримати інформацію та вийти з системи.</p>
+    <hr class="my-4">
+    <a class="btn btn-danger btn-lg" href="{{ url_for('users.logout') }}" role="button">Вийти</a>
+</div>
+{% endblock %}
