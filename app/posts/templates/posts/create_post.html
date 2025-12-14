@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="container mt-4">
-    <h2>Створити новий пост</h2>
+    <h2>{{ title }}</h2>
     <div class="card p-4 shadow-sm">
         <form method="POST" action="">
             {{ form.csrf_token }}
