@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Блог</h1>
+        <a href="{{ url_for('posts.create_post') }}" class="btn btn-success">Додати пост</a>
+    </div>
+
+    <div class="row">
+        {% for post in posts %}
+        <div class="col-md-12 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title">{{ post.title }}</h3>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                        Категорія: <span class="badge bg-secondary">{{ post.category }}</span> | 
+                        Дата: {{ post.posted.strftime('%Y-%m-%d %H:%M') }}
+                    </h6>
+                    <p class="card-text">{{ post.content[:200] }}...</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm">Читати далі</a>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="alert alert-info">Поки що немає постів. Будьте першим!</div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
