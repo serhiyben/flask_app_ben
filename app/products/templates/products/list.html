@@ -1,9 +1,17 @@
 {% extends "base.html" %}
+
 {% block content %}
-<h2>Список продуктів</h2>
-<ul class="list-group">
+<h2 class="mb-3">Список продуктів</h2>
+<div class="row">
     {% for p in products %}
-    <li class="list-group-item">{{ p }}</li>
+    <div class="col-md-4 mb-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">{{ p.name }}</h5>
+                <p class="card-text">Ціна: {{ p.price }} грн</p>
+            </div>
+        </div>
+    </div>
     {% endfor %}
-</ul>
+</div>
 {% endblock %}
