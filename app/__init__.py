@@ -1,17 +1,27 @@
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from sqlalchemy import MetaData
 from config import config
 
-# Ініціалізуємо розширення глобально (поки що не прив'язуємо до конкретного app)
-db = SQLAlchemy()
-migrate = Migrate()
+convention = {
+    "ix": 'ix_%(column_0_label)s',
+    "uq": "uq_%(table_name)s_%(column_0_name)s",
+    "ck": "ck_%(table_name)s_%(constraint_name)s",
+    "fk": "fk_%(table_name)s_%(column_0_name)s_%(referred_table_name)s",
+    "pk": "pk_%(table_name)s"
+}
+metadata = MetaData(naming_convention=convention)
+# ------------------------
 
+
+db = SQLAlchemy(metadata=metadata)
+migrate = Migrate()
 def create_app(config_name='default'):
-    # Створюємо екземпляр додатку
+    
     app = Flask(__name__)
 
-    # Завантажуємо налаштування з об'єкта конфігурації (відповідно до імені)
+   
     app.config.from_object(config[config_name])
 
     # Ініціалізуємо розширення з цим конкретним додатком
@@ -25,15 +35,12 @@ def create_app(config_name='default'):
     from app.pages.views import pages_bp
     app.register_blueprint(pages_bp)
 
-    # Блюпринт для продуктів (опціональний, як у вас було)
-    try:
-        from app.products.views import products_bp
-        app.register_blueprint(products_bp, url_prefix="/products")
-    except ImportError:
-        pass
+    # Реєстрація блюпринта продуктів (Lab 7)
+    # Прибираємо try-except, щоб бачити помилки, якщо вони є
+    from app.products.views import products_bp
+    app.register_blueprint(products_bp, url_prefix="/products")
 
-    # Тут пізніше буде реєстрація блюпринта для постів (Lab 6, Частина 2)
-    # from app.posts.views import posts_bp
+    # Реєстрація блюпринта для постів (Lab 6)
     from app.posts import posts_bp
     app.register_blueprint(posts_bp, url_prefix="/post")
 
