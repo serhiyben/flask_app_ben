@@ -99,3 +99,24 @@ def greetings(name):
 @users_bp.route("/admin")
 def admin():
     return redirect(url_for("users.greetings", name="Administrator", age=45))
+
+
+
+@users_bp.route('/change_theme/<string:theme>')
+def change_theme(theme):
+    """Змінює тему оформлення, зберігаючи вибір у куки."""
+    
+    allowed_themes = ['light', 'dark', 'green']
+    
+    if theme not in allowed_themes:
+        flash('Невідома тема!', 'warning')
+        return redirect(url_for('users.profile'))
+    
+    
+    resp = make_response(redirect(url_for('users.profile')))
+    
+    
+    resp.set_cookie('theme', theme, max_age=30*24*60*60)
+    
+    flash(f'Тему успішно змінено на {theme}.', 'success')
+    return resp
