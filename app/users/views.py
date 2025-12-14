@@ -1,26 +1,44 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash, session, make_response
+from app.users.forms import LoginForm  # Імпортуємо нашу форму
 
 # Створюємо Blueprint
 users_bp = Blueprint("users", __name__, template_folder="templates")
 
 # "База даних" користувачів
-users_data = {"user1": "123", "admin": "admin123"}
+users_data = {"user1": "12345", "admin": "admin123"}
 
 @users_bp.route("/login", methods=["GET", "POST"])
 def login():
-    if request.method == "POST":
-        username = request.form.get("username")
-        password = request.form.get("password")
+    # Якщо користувач вже ввійшов, перенаправляємо на профіль
+    if "username" in session:
+        return redirect(url_for("users.profile"))
 
+    # Створюємо екземпляр форми
+    form = LoginForm()
+
+    # Перевіряємо валідацію при POST-запиті
+    if form.validate_on_submit():
+        username = form.username.data
+        password = form.password.data
+        remember = form.remember.data
+
+        # Перевірка логіна/пароля
         if username in users_data and users_data[username] == password:
             session["username"] = username
-            flash("Ви успішно увійшли!", "success")
+            
+            # Формуємо повідомлення залежно від галочки "Запам'ятати мене"
+            msg = "Ви успішно увійшли!"
+            if remember:
+                msg += " (Ми вас запам'ятали)"
+            
+            flash(msg, "success")
             return redirect(url_for("users.profile"))
         else:
             flash("Невірні дані! Спробуйте ще раз.", "danger")
             return redirect(url_for("users.login"))
 
-    return render_template("users/login.html")
+    # Передаємо форму у шаблон
+    return render_template("users/login.html", form=form)
 
 @users_bp.route("/profile")
 def profile():
@@ -37,7 +55,7 @@ def logout():
     flash("Ви вийшли з системи.", "info")
     return redirect(url_for("users.login"))
 
-# --- Робота з COOKIES (Завдання 2) ---
+# --- Робота з COOKIES (Завдання 2 з лаби 4) ---
 
 @users_bp.route('/add_cookie', methods=['POST'])
 def add_cookie():
@@ -100,7 +118,7 @@ def greetings(name):
 def admin():
     return redirect(url_for("users.greetings", name="Administrator", age=45))
 
-
+# --- Зміна теми (Завдання 3 з лаби 4) ---
 
 @users_bp.route('/change_theme/<string:theme>')
 def change_theme(theme):
@@ -112,9 +130,7 @@ def change_theme(theme):
         flash('Невідома тема!', 'warning')
         return redirect(url_for('users.profile'))
     
-    
     resp = make_response(redirect(url_for('users.profile')))
-    
     
     resp.set_cookie('theme', theme, max_age=30*24*60*60)
     

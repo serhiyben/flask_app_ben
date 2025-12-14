@@ -1,19 +1,20 @@
 {% extends "base.html" %}
+{% from "_render_field.html" import render_field %}
+
 {% block content %}
-<h2>Контакти</h2>
-<form class="mt-3">
-    <div class="mb-3">
-        <label for="name" class="form-label">Ім’я</label>
-        <input type="text" class="form-control" id="name" placeholder="Ваше ім’я">
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <h2>Контакти</h2>
+        
+        <form method="POST" action="" novalidate>
+            {{ form.csrf_token }} {{ render_field(form.name) }}
+            {{ render_field(form.email) }}
+            {{ render_field(form.phone) }}
+            {{ render_field(form.subject) }}
+            {{ render_field(form.message, rows=5) }}
+            
+            {{ form.submit(class="btn btn-primary") }}
+        </form>
     </div>
-    <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="example@gmail.com">
-    </div>
-    <div class="mb-3">
-        <label for="message" class="form-label">Повідомлення</label>
-        <textarea class="form-control" id="message" rows="3"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Надіслати</button>
-</form>
+</div>
 {% endblock %}

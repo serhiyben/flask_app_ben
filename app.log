@@ -1,0 +1,67 @@
+2025-12-14 19:42:35,170 - WARNING -  * Debugger is active!
+2025-12-14 19:42:35,176 - INFO -  * Debugger PIN: 416-277-888
+2025-12-14 19:42:45,387 - INFO -  * Detected change in 'C:\\Users\\aaa\\Desktop\\pnu\\course3\\webPy\\flask_app_ben\\app\\pages\\views.py', reloading
+2025-12-14 19:43:05,439 - WARNING -  * Debugger is active!
+2025-12-14 19:43:05,444 - INFO -  * Debugger PIN: 416-277-888
+2025-12-14 19:43:08,533 - INFO -  * Detected change in 'C:\\Users\\aaa\\Desktop\\pnu\\course3\\webPy\\flask_app_ben\\app\\pages\\views.py', reloading
+2025-12-14 19:43:08,992 - WARNING -  * Debugger is active!
+2025-12-14 19:43:08,998 - INFO -  * Debugger PIN: 416-277-888
+2025-12-14 19:43:36,453 - INFO - 127.0.0.1 - - [14/Dec/2025 19:43:36] "GET /contacts HTTP/1.1" 200 -
+2025-12-14 19:43:36,544 - INFO - 127.0.0.1 - - [14/Dec/2025 19:43:36] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-12-14 19:43:43,656 - INFO - 127.0.0.1 - - [14/Dec/2025 19:43:43] "GET / HTTP/1.1" 200 -
+2025-12-14 19:43:43,683 - INFO - 127.0.0.1 - - [14/Dec/2025 19:43:43] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-12-14 19:44:00,278 - INFO - 127.0.0.1 - - [14/Dec/2025 19:44:00] "GET /contacts HTTP/1.1" 200 -
+2025-12-14 19:44:00,306 - INFO - 127.0.0.1 - - [14/Dec/2025 19:44:00] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-12-14 19:44:46,996 - INFO - 127.0.0.1 - - [14/Dec/2025 19:44:46] "POST /contacts HTTP/1.1" 200 -
+2025-12-14 19:44:47,039 - INFO - 127.0.0.1 - - [14/Dec/2025 19:44:47] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-12-14 19:46:21,878 - INFO - Form submitted: Name=fgffg, Email=sdfffffff@gmail.com, Subject=question
+2025-12-14 19:46:21,879 - INFO - 127.0.0.1 - - [14/Dec/2025 19:46:21] "[32mPOST /contacts HTTP/1.1[0m" 302 -
+2025-12-14 19:46:21,888 - INFO - 127.0.0.1 - - [14/Dec/2025 19:46:21] "GET /contacts HTTP/1.1" 200 -
+2025-12-14 19:46:21,925 - INFO - 127.0.0.1 - - [14/Dec/2025 19:46:21] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-12-14 19:47:47,776 - INFO -  * Detected change in 'C:\\Users\\aaa\\Desktop\\pnu\\course3\\webPy\\flask_app_ben\\app\\users\\form.py', reloading
+2025-12-14 19:47:48,161 - WARNING -  * Debugger is active!
+2025-12-14 19:47:48,166 - INFO -  * Debugger PIN: 416-277-888
+2025-12-14 19:54:25,110 - INFO -  * Detected change in 'C:\\Users\\aaa\\Desktop\\pnu\\course3\\webPy\\flask_app_ben\\app\\users\\forms.py', reloading
+2025-12-14 19:54:25,553 - WARNING -  * Debugger is active!
+2025-12-14 19:54:25,558 - INFO -  * Debugger PIN: 416-277-888
+2025-12-14 19:55:15,441 - INFO -  * Detected change in 'C:\\Users\\aaa\\Desktop\\pnu\\course3\\webPy\\flask_app_ben\\app\\users\\views.py', reloading
+2025-12-14 19:55:15,900 - WARNING -  * Debugger is active!
+2025-12-14 19:55:15,906 - INFO -  * Debugger PIN: 416-277-888
+2025-12-14 19:55:18,988 - INFO -  * Detected change in 'C:\\Users\\aaa\\Desktop\\pnu\\course3\\webPy\\flask_app_ben\\app\\users\\views.py', reloading
+2025-12-14 19:55:19,413 - WARNING -  * Debugger is active!
+2025-12-14 19:55:19,418 - INFO -  * Debugger PIN: 416-277-888
+2025-12-14 19:55:52,011 - INFO -  * Detected change in 'C:\\Users\\aaa\\Desktop\\pnu\\course3\\webPy\\flask_app_ben\\app\\users\\views.py', reloading
+2025-12-14 19:55:52,420 - WARNING -  * Debugger is active!
+2025-12-14 19:55:52,425 - INFO -  * Debugger PIN: 416-277-888
+2025-12-14 19:55:56,527 - INFO -  * Detected change in 'C:\\Users\\aaa\\Desktop\\pnu\\course3\\webPy\\flask_app_ben\\app\\users\\views.py', reloading
+2025-12-14 19:55:56,924 - WARNING -  * Debugger is active!
+2025-12-14 19:55:56,930 - INFO -  * Debugger PIN: 416-277-888
+2025-12-14 19:56:58,209 - INFO -  * Detected change in 'C:\\Users\\aaa\\Desktop\\pnu\\course3\\webPy\\flask_app_ben\\app\\users\\views.py', reloading
+2025-12-14 19:56:58,588 - WARNING -  * Debugger is active!
+2025-12-14 19:56:58,592 - INFO -  * Debugger PIN: 416-277-888
+2025-12-14 19:56:59,648 - INFO -  * Detected change in 'C:\\Users\\aaa\\Desktop\\pnu\\course3\\webPy\\flask_app_ben\\app\\users\\views.py', reloading
+2025-12-14 19:57:00,012 - WARNING -  * Debugger is active!
+2025-12-14 19:57:00,017 - INFO -  * Debugger PIN: 416-277-888
+2025-12-14 19:58:30,747 - INFO -  * Detected change in 'C:\\Users\\aaa\\Desktop\\pnu\\course3\\webPy\\flask_app_ben\\app\\users\\views.py', reloading
+2025-12-14 19:58:31,172 - WARNING -  * Debugger is active!
+2025-12-14 19:58:31,178 - INFO -  * Debugger PIN: 416-277-888
+2025-12-14 19:58:44,441 - INFO -  * Detected change in 'C:\\Users\\aaa\\Desktop\\pnu\\course3\\webPy\\flask_app_ben\\app\\users\\views.py', reloading
+2025-12-14 19:58:44,869 - WARNING -  * Debugger is active!
+2025-12-14 19:58:44,875 - INFO -  * Debugger PIN: 416-277-888
+2025-12-14 19:59:49,373 - INFO - 127.0.0.1 - - [14/Dec/2025 19:59:49] "GET /contacts HTTP/1.1" 200 -
+2025-12-14 19:59:49,453 - INFO - 127.0.0.1 - - [14/Dec/2025 19:59:49] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-12-14 19:59:54,662 - INFO - 127.0.0.1 - - [14/Dec/2025 19:59:54] "POST /contacts HTTP/1.1" 200 -
+2025-12-14 19:59:54,692 - INFO - 127.0.0.1 - - [14/Dec/2025 19:59:54] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-12-14 20:47:42,108 - INFO - 127.0.0.1 - - [14/Dec/2025 20:47:42] "[32mGET /users/logout HTTP/1.1[0m" 302 -
+2025-12-14 20:47:42,122 - INFO - 127.0.0.1 - - [14/Dec/2025 20:47:42] "GET /users/login HTTP/1.1" 200 -
+2025-12-14 20:47:42,154 - INFO - 127.0.0.1 - - [14/Dec/2025 20:47:42] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-12-14 20:47:48,190 - INFO - 127.0.0.1 - - [14/Dec/2025 20:47:48] "POST /users/login HTTP/1.1" 200 -
+2025-12-14 20:47:48,210 - INFO - 127.0.0.1 - - [14/Dec/2025 20:47:48] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-12-14 20:48:27,343 - INFO - 127.0.0.1 - - [14/Dec/2025 20:48:27] "POST /users/login HTTP/1.1" 200 -
+2025-12-14 20:48:27,370 - INFO - 127.0.0.1 - - [14/Dec/2025 20:48:27] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-12-14 20:48:57,964 - INFO -  * Detected change in 'C:\\Users\\aaa\\Desktop\\pnu\\course3\\webPy\\flask_app_ben\\app\\users\\views.py', reloading
+2025-12-14 20:48:58,419 - WARNING -  * Debugger is active!
+2025-12-14 20:48:58,424 - INFO -  * Debugger PIN: 416-277-888
+2025-12-14 20:49:05,906 - INFO - 127.0.0.1 - - [14/Dec/2025 20:49:05] "[32mPOST /users/login HTTP/1.1[0m" 302 -
+2025-12-14 20:49:05,937 - INFO - 127.0.0.1 - - [14/Dec/2025 20:49:05] "GET /users/profile HTTP/1.1" 200 -
+2025-12-14 20:49:06,042 - INFO - 127.0.0.1 - - [14/Dec/2025 20:49:06] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
