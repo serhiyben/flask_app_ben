@@ -4,8 +4,6 @@ from flask_migrate import Migrate
 from sqlalchemy import MetaData
 from config import config
 
-# --- Налаштування іменування обмежень (Lab 7, Частина 3) ---
-# Це потрібно для коректної генерації міграцій, особливо для SQLite
 convention = {
     "ix": 'ix_%(column_0_label)s',
     "uq": "uq_%(table_name)s_%(column_0_name)s",
@@ -14,17 +12,16 @@ convention = {
     "pk": "pk_%(table_name)s"
 }
 metadata = MetaData(naming_convention=convention)
-# ------------------------------------------------------------
+# ------------------------
 
-# Ініціалізуємо розширення з metadata
+
 db = SQLAlchemy(metadata=metadata)
 migrate = Migrate()
-
 def create_app(config_name='default'):
-    # Створюємо екземпляр додатку
+    
     app = Flask(__name__)
 
-    # Завантажуємо налаштування з об'єкта конфігурації
+   
     app.config.from_object(config[config_name])
 
     # Ініціалізуємо розширення з цим конкретним додатком
